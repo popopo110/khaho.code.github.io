@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Using reliable free Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" alt="Logo" />
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>AI/ML Developer</p>
+          <h1>Hi, I'm <span>KhaLoi</span><br />From Texas</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/personal.jpeg" alt="KhaLoi Photo" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              I'm currently a junior at the University of Michigan. My declared
+              major is Computer Science with a minor in Physics.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">
+                Education
+              </p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Languages</span><br />Python, C++, MySQL, HTML, CSS</li>
+                <li>
+                  <span>Machine Learning</span><br />Built a model predicting
+                  June 2025 stock trends
+                </li>
+                <li><span>Robotics</span><br />Autonomous navigation systems</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>AI/ML Developer</span><br />Developed predictive algorithms</li>
+                <li><span>Data Analysis</span><br />Extracted trends and insights from data</li>
+                <li><span>Robotics</span><br />Worked on autonomous rover systems</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>FPT University - HCMC, VN</span></li>
+                <li><span>Lone Star College - TX, US</span></li>
+                <li><span>University of Michigan - MI, US</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fas fa-laptop-code"></i>
+            <h2>Web Development</h2>
+            <p>Responsive websites with modern frameworks</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fas fa-chart-line"></i>
+            <h2>Data Analytics</h2>
+            <p>Visualizing and interpreting complex datasets</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fas fa-robot"></i>
+            <h2>Autonomous Systems</h2>
+            <p>Designing intelligent robotic algorithms</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+      <div class="container">
+        <h1 class="sub-title">Contact Me</h1>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> khaloi@example.com</p>
+          <p><i class="fas fa-phone"></i> +1 234 567 8901</p>
+          <p><i class="fas fa-location-dot"></i> Texas, USA</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tablinks = document.getElementsByClassName("tab-links");
+      const tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (let link of tablinks) {
+          link.classList.remove("active-link");
+        }
+        for (let content of tabcontents) {
+          content.classList.remove("active-tab");
+        }
+        document
+          .querySelector(`.tab-links[onclick="opentab('${tabname}')"]`)
+          .classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+  </body>
+</html>

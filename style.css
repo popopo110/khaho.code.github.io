@@ -1,0 +1,258 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: #111;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  #header {
+    height: 100vh;
+    background: linear-gradient(135deg, #cce7ff, #ffffff);
+    display: flex;
+    align-items: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  nav ul li a:hover {
+    color: #00aaff;
+  }
+  
+  .header-text {
+    margin-top: 10%;
+    text-align: left;
+  }
+  
+  .header-text h1 {
+    font-size: 60px;
+    color: #111;
+  }
+  
+  .header-text p {
+    font-size: 24px;
+    color: #00aaff;
+  }
+  
+  .header-text h1 span {
+    color: #00aaff;
+  }
+  
+  /* About Section */
+  #about {
+    padding: 100px 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .about-col-1 {
+    flex: 1 1 35%;
+  }
+  
+  .about-col-1 img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .about-col-2 {
+    flex: 1 1 60%;
+  }
+  
+  .sub-title {
+    font-size: 36px;
+    color: #111;
+    margin-bottom: 20px;
+  }
+  
+  .tab-titles {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+  }
+  
+  .tab-links {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px;
+  }
+  
+  .tab-links::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s;
+  }
+  
+  .tab-links.active-link::after {
+    width: 50%;
+  }
+  
+  .tab-contents {
+    display: none;
+  }
+  
+  .tab-contents.active-tab {
+    display: block;
+  }
+  
+  .tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+  }
+  
+  .tab-contents ul li span {
+    color: #00aaff;
+    font-weight: 500;
+  }
+  
+  /* Services */
+  #services {
+    padding: 80px 0;
+    background: #ffffff;
+  }
+  
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+  }
+  
+  .services-list div {
+    background: #e6f4ff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.1);
+  }
+  
+  .services-list div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.2);
+  }
+  
+  .services-list div i {
+    font-size: 36px;
+    color: #00aaff;
+    margin-bottom: 15px;
+  }
+  
+  .services-list div h2 {
+    font-size: 22px;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  
+  .services-list div p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .services-list div a {
+    font-size: 14px;
+    color: #00aaff;
+    text-decoration: none;
+    border-bottom: 1px solid #00aaff;
+  }
+  
+  /* Contact Section */
+  #contact {
+    padding: 80px 0;
+    background: #f9f9f9;
+  }
+  
+  .contact-info {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .contact-info p {
+    margin: 10px 0;
+  }
+  
+  .contact-info i {
+    color: #00aaff;
+    margin-right: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+    .header-text {
+      text-align: center;
+    }
+    .services-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
